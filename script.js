@@ -1396,7 +1396,7 @@ function createQuizz(data) {
   QuizSection.style.display = 'block';
   MainSection.style.display = 'none';
   // testmainCard.innerHTML = ''; // clear previous quiz cards
-  const UserName=prompt('Enter Your Name: ');
+  let UserName=prompt('Enter Your Name: ');
   let userAnswers = [];
   data.forEach((item, index) => {
     let QuizzCard = document.createElement('div');
@@ -1466,15 +1466,13 @@ function createQuizz(data) {
     else{
       alert(`Please write the quizz First..!`);
     }
-    
-    
   });
 }
 
 
 
 // logic for back to Mainsection[course section] from qizz
-document.getElementById('BackToMainsection').addEventListener('click',()=>{
-  MainSection.style.display='grid';
-  QuizSection.style.display='none';
-});
+// document.getElementById('BackToMainsection').addEventListener('click',()=>{
+//   MainSection.style.display='grid';
+//   QuizSection.style.display='none';
+// });
