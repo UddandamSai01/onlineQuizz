@@ -50,6 +50,7 @@ select{
 }
 section {
     background-color: #0c023d;
+   
 }
 .home{
     display: grid;
@@ -178,8 +179,6 @@ h2{
     text-align: center;
     padding: 20px;
     display: none;
-    
-    
 }
 .QuizSection #maincard{
     background-color: white;
@@ -290,6 +289,11 @@ ul{
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap: 20px;
+        
+    }
+    .back a{
+        font-size: 35px;
+        margin: 10px;
     }
     
     .Card{
