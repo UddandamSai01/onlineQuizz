@@ -1397,6 +1397,8 @@ function createQuizz(data) {
   MainSection.style.display = 'none';
   // testmainCard.innerHTML = ''; // clear previous quiz cards
   let UserName=prompt('Enter Your Name: ');
+  
+  
   let userAnswers = [];
   data.forEach((item, index) => {
     let QuizzCard = document.createElement('div');
@@ -1452,7 +1454,7 @@ function createQuizz(data) {
         if (userAnswers[i] === q.correctAnswer) score++;
       });
 
-      const thanksCard=document.querySelector('.thanksCard');
+      const thanksCard=document.getElementById('thanksCard');
       const cardDiv=document.createElement('div');
       cardDiv.classList.add('submitCard');
       cardDiv.innerHTML=`
