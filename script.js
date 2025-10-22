@@ -1435,6 +1435,7 @@ function createQuizz(data) {
       if (selected){
         if (! userAnswers.includes(selected.value)){
           userAnswers.push(selected.value);
+          saveBtn.style.opacity='0.5';
           alert(`Selected Option: ${selected.value}`);
         }
       } else {     

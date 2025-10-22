@@ -289,16 +289,20 @@ ul{
     .bsc,.llb,.mbbs{
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        gap: 5px;
-    }
-    .Card{
-        height: 250px;
-        width: 180px;
-    }
-    #MainSection img{
-        height: 160px;
+        gap: 20px;
     }
     
+    .Card{
+        height: 210px;
+        width: 165px;
+        
+    }
+    #MainSection img{
+        height: 120px;
+    }
+    .Card h2{
+        font-size: 10px;
+    }
     footer{
         text-wrap: nowrap;
         font-size: 9px;
