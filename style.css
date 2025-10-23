@@ -56,7 +56,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     padding: 20px 0; 
-    height: 100vh;
+   
 }
 .homeCard{
     height: 300px;
@@ -247,7 +247,7 @@ ul{
     border-radius: 10px;
     color: white;
 }
-@media (max-width:580px){
+@media (max-width:420px){
     header{
         padding: 5px;
     }
@@ -269,8 +269,6 @@ ul{
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap: 10px;
-        height: 100vh;
-        
     }
     .homeCard{
         height: 200px;
@@ -323,9 +321,9 @@ ul{
 }
 
 
-@media (min-width:581px) and (max-width:850px){
+@media (max-width:720px){
     .homeCard{
-        height: 280px;
+        height: 210px;
         width: 180px;
         margin: 10px auto;  
     }
@@ -336,11 +334,27 @@ ul{
         font-size:20px;
     }
     .Card{
-        height: 280px;
+        height: 200px;
         width: 180px;
     }
     footer{
         text-wrap: nowrap;
+    }
+    .home{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    .btech,.baa,.ba,
+    .bsc,.llb,.mbbs{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        
+    }
+    footer{
+        text-wrap: nowrap;
+        font-size: 9px;
     }
     
 }
