@@ -195,7 +195,8 @@ footer a {
   border-radius: 20px;
   margin: 50px auto;
   position: relative;
-  max-width: 500px;
+  text-align: left;
+  width: 75%;
 }
 
 .QuizSection #maincard button {
@@ -220,7 +221,9 @@ ul {
   gap: 10px;
   margin: 20px 0;
 }
-
+.quizcard{
+    padding-bottom: 50px;
+  }
 /* THANKS SECTION */
 #thanks {
   display: none;
@@ -281,6 +284,15 @@ ul {
     font-size: 10px;
     padding: 5px;
   }
+  .QuizSection  #maincard{
+    font-size: 0.8rem;
+    text-align: left;
+    width: 100%;
+  }
+  .QuizSection  #maincard button{
+    right: 10px;
+  }
+  
 }
 
 /* Small phones (≤480px) */
@@ -313,5 +325,13 @@ ul {
   footer {
     font-size: 9px;
     white-space: nowrap;
+  }
+  .QuizSection  #maincard{
+    font-size: 0.8rem;
+    text-align: left;
+    width: 100%;
+  }
+  .QuizSection  #maincard button{
+    right: 10px;
   }
 }
