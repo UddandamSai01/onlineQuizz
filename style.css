@@ -3,371 +3,205 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
+/* HEADER SECTION ---- */
 header{
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding:0 30px;
-    background-color: #00ff48c1;
-    color: aqua;
-    
-}
-.logo img{
-    height: 100px;
-    width: 160px;
-     filter: drop-shadow(2px 2px 20px black);
-}
-.title{
-    background-image: linear-gradient(135deg,rgb(255, 0, 128),#041e46,rgb(255, 0, 128));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    filter: drop-shadow(1px 1px 10px #ff0000);
-    font-size: 40px;
-    text-wrap: nowrap;
-}
-.catagory{
-    display: flex;
-    gap: 10px;
+    background-color: rgb(0, 0, 0);
     align-items: center;
+    padding:10px ;
 }
-label img{
-    height: 60px;
-    width: 60px;
+/* img with 4-boxs */
+header img{
+    height: 50px;
+    background-color: goldenrod;
+    border-radius:10px;
 }
-select{
-    height: 30px;
-    border-radius: 10px;
-    width: 120px;
-    padding:0 10px;
-    background-color: transparent;
-    color: #28006e;
-    font-size: 15px;
-    outline: none;
-    border: 3px solid;
-    font-weight: bold;
-}
-section {
-    background-color: #0c023d;
-   
-}
-.home{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 20px 0; 
-   
-}
-.homeCard{
-    height: 300px;
-    width: 250px;
-    box-shadow: 0 0 10px white;
-    border-radius: 10px;
-    text-align: center;
-    background-color: rgb(108, 106, 106);
-    margin: 20px auto;
-    
-      
-}
-.homeCard:hover{
-    transform: translateY(-5px);
-    transition: 0.3s ease;
-    box-shadow: 0 0 20px #00ff33;
-    filter: drop-shadow(0 0 10px red);
-}
-img{
-    height: 60%;
-    width: 100%;
-    object-fit: cover;
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
-}
-h2{
-    text-align: left;
-    margin: 10px;
-    color: cyan;
-}
-button{
+/* Quiz logo img */
+header  a img{
+    height:100px;
     width: 150px;
-    font-size: 20px;
-    border-radius: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    padding:5px 0;
-    background-color: rgb(255, 127, 202);
-    color: darkblue;
+    filter: drop-shadow(0 0 10px #00ff00);
+    background-color: transparent;
+}
+/* title with h1 */
+header h1{
+    background-image: linear-gradient(to right,#00ff00,#00ccff,#00ff00);
+    background-clip: text;
+    color: transparent;
     font-weight: bolder;
+     font-size: 50px;
+    
+}
 
-}
-button:active{
-    background-color: white;
-    color: black;
-}
+/* FOOTER SECTION------ */
 footer{
-    background-color: #00ff33;
+    background-color: #000000;
+    color: white;
     text-align: center;
-    padding: 10px;
+    padding: 30px;
+    
     
 }
 footer a{
     text-decoration: none;
-    font-family: cursive;
-}
-main{
-    background-color: #0c023d;
+    color: greenyellow;
 }
 
-#individualSectionBtech,
-#individualSectionBa,
-#individualSectionBaa,
-#individualSectionBsc,
-#individualSectionLlb,
-#individualSectionMbbs{
-    display: none;
-    
+/* ------------SECTION's CSS ARE BEGINS----------- */
+
+/* SECTION BG COLOR*/
+section{
+    background-color: rgb(150, 150, 150); 
 }
-
-
-.back a,#BackToMainsection{
-    width: 70px;
-    text-decoration: none;
-    font-size: 50px;
-    filter: drop-shadow(0 0 10px #000000);
-    background-color: white;
-    box-shadow: 0 0 10px rgb(0, 255, 13);
+/* css for both section-1 & section-2 */
+.homePage,.individualCourses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    align-items: center;
+}
+/* homeCard & MainSection-Card form js */
+.Card,.homeCard{
+    height: 280px;
+    width: 200px;
+    border: 2px solid;
     border-radius: 10px;
-    margin-left: 30px;
     text-align: center;
+    background-color: #063441;
+    margin: 20px 0;
+   
 }
-.btech,.ba,.baa,
-.bsc,.llb,.mbbs{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding-top: 20px;
+/* hover effect of mainsection card & homecard */
+.Card:hover, .homeCard:hover{
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
+/* homeCard & MainSection-Card --- img  */
+.homeCard img,.Card img{
+    width: 100%;
+    height:70%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+
+}
+/* homeCard & MainSection-Card button */
+button{
+    height:30px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #fffa6b;
+    color: indigo;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+/* button effect */
+button:active{
+    background-color: rgb(255, 179, 0);
+    color: black;
+    font-weight: bolder;
+}
+/* HomeCrad & Crad title with h2 */
 h2{
-    font-size: 15px;
-    text-wrap: wrap;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: aqua;
 }
-.bsc h2{
-    font-size: 11px;
+/* MainSection Card  */
+.Card h2{
+    font-size: 12px;
+    font-weight: bolder;
+    margin-bottom: 10px ;
+    color: hotpink;
 }
-.baa h2{
-    font-size: 13px;
-}
-.Card{
-    height: 300px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px white;
-    border-radius: 20px;
-    margin: 20px auto;
-}
-.Card img{
-    object-fit: fill;
-}
+/* MainSection Card button */
 .Card button{
-    background-color: green;
-    color: white;
-}
-.Card button:active{
     background-color: greenyellow;
     color: black;
 }
-.Card h2{
-    color: rgb(255, 0, 174);
-}
-.QuizSection{
-    text-align: center;
-    padding: 20px;
-    display: none;
-}
-.QuizSection #maincard{
-    background-color: white;
-    line-height: 30px;
-    text-align: center;
-    padding: 30px 30px;
-    border-radius: 20px;
-    margin: 50px auto;
-    position: relative;
-}
-.QuizSection #maincard button{
-    height:30px;
-    width: 70px;
-    font-size: 15px;
-    border-radius: 10px;
-    background-color: greenyellow;
-    position: absolute;
-    right: 0;
-    right: 100px;
-}
-.QuizSection #maincard button:active{
-    background-color: black;
+.Card button:active{
+    background-color: green;
     color: white;
 }
+/* in initial stage the section-2 will be hide. */
+#section-2{
+    display: none;
+}
+/* BACK BUTTON in section-2 */
+#section-2 a{
+    font-size: 50px;
+    margin:20px;
+    text-decoration: none;
+    filter: brightness(200%);
+}
 
-#maincard  h3,ul{
+/* QuizSection wiht questions, options, save & submit button */
+.QuizSection{
+    display: none;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Submit button */
+.QuizSection #submitBtn{
+    width: 250px;
+    height: 45px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+/* quizCard with querstions */
+.quizcard{
+    position: relative;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    width: 70%;
+    margin: auto;  
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 20px;
+    padding-bottom: 0px;
+    background-color: #222222;
+    color: white;
+}
+/* save button in quizzcard */
+.quizcard button{
+    background-color: #00ff00;
+    width: 80px;
+}
+.quizcard button:active{
+    background-color: #00cc00;
+    color: white;
+}
+/* to make the question & options left side aligment */
+.quizcard h3,ul{
     text-align: left;
 }
-ul{
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 10px;
-        margin: 20px 0;
-    }
-.quizcard{
-    padding: 30px;
+/* to make the tow options in each row  */
+.quizcard ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 20px; 
 }
-#thanks{
+/* to make the sapce between options */
+.quizcard ul li{
+    padding: 10px 0;
+}
+
+#section-4{
     display: none;
-    background-color: #a7a7a7;   
 }
-.thanksCard{
+
+#resultCard{
+    display: grid;
+    place-content: center;
     text-align: center;
-}
-.thanksCard .submitCard{
-    line-height: 50px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-}
-.submitCard h1{
-    background-image: linear-gradient(135deg,rgb(255, 47, 255),#ff0000,blue,#284563,rgb(41, 0, 128));
-    background-clip: text;
-    color: transparent;
-    
-}
-.submitCard h3{
     line-height: 30px;
-    text-transform: uppercase;
+    height: 500px;
     
 }
-.submitCard a{
-    background-color: #000000;
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 10px;
-    color: white;
-}
-@media (max-width:420px){
-    header{
-        padding: 5px;
-    }
-    .logo img{
-        height: 60px;
-        width: 100px;
-    }
-    .title{
-        font-size:15px;
-    }
-    label img{
-        height: 40px;
-        width: 40px;
-    }
-    select{
-        width: 100px; 
-    }
-    .home{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 10px;
-    }
-    .homeCard{
-        height: 100px;
-        width: 130px;
-    }
-    .homeCard img{
-        height: 50%;
-        width: 100%;
-    }
-    button{
-        width: 120px;
-        font-size: 16px;
-    }
-    .btech,.baa,.ba,
-    .bsc,.llb,.mbbs{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 20px;
-        
-    }
-    .back a{
-        font-size: 35px;
-        margin: 10px;
-    }
-    
-    .Card{
-        height: 210px;
-        width: 1px;
-        
-    }
-    #MainSection img{
-        height: 120px;
-    }
-    .Card h2{
-        font-size: 10px;
-    }
-    footer{
-        text-wrap: nowrap;
-        font-size: 9px;
-    }
-    .quizcard{
-        font-size: 10px;
-        padding: 0px;
-        line-height: 10px;
-        margin-bottom: 60px ;  
-    }
-    
-  
-   
-}
-
-
-@media (max-width:720px){
-    .homeCard{
-        height: 210px;
-        width: 180px;
-        margin: 10px auto;  
-    }
-    select{
-        width: 80px; 
-    }
-    .title{
-        font-size:20px;
-    }
-    .Card{
-        height: 200px;
-        width: 180px;
-    }
-    footer{
-        text-wrap: nowrap;
-    }
-    .home{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 10px;
-    }
-    .btech,.baa,.ba,
-    .bsc,.llb,.mbbs{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 20px;
-        
-    }
-    footer{
-        text-wrap: nowrap;
-        font-size: 9px;
-    }
-    
-}
-@media (min-width:721px) {
-    .QuizSection #maincard{
-        margin:50px 200px;
-    }
-    .homeCard{
-        height: 210px;
-        width: 200px;
-        margin: 10px auto;  
-    }
-} 
-

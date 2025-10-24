@@ -1,69 +1,19 @@
-const individualSectionBtech=document.getElementById('individualSectionBtech');
-const individualSectionBa=document.getElementById('individualSectionBa');
-const individualSectionBsc=document.getElementById('individualSectionBsc');
-const individualSectionBaa=document.getElementById('individualSectionBaa');
-const individualSectionLlb=document.getElementById('individualSectionLlb');
-const individualSectionMbbs=document.getElementById('individualSectionMbbs');
-
-const course=[
-    {img:"imgaes/ba.png",name:'BA'},
-    {img:'imgaes/bsc.png',name:'BSc'},
-    {img:'imgaes/b.tech.jpg',name:'BTech'},
-    {img:'imgaes/baa.png',name:'BAA'},
-    {img:'imgaes/llb.png',name:'LLB'},
-    {img:'imgaes/mbbs.png',name:'MBBS'},
+// Data for BA
+const BA=[
+    {img:"imgaes/english.jpg",name:'ENGLISH'},
+    {img:"imgaes/psycho.png",name:'PSYCHOLOGY'},
+    {img:"imgaes/ploiticalScience.jpg",name:'POLITICAL_SCIENCE'},
+    {img:"imgaes/journalism.webp",name:'JOURNALISM'}
 ];
 
+// Data for BAA
+const BAA=[
+    {img:"imgaes/JusticeStudie.jpg",name:'JUSTICE_STUDIES'},
+    {img:"imgaes/design.webp",name:'DESIGN'},
+    {img:"imgaes/Media.jpg",name:'MEDIA_COMMNICATION'}
+];
 
-const cards = [];
-const home=document.getElementById('home');
-
-course.forEach((item,index )=> {
-    let card = document.createElement('div');
-    card.classList.add('homeCard');
-
-    card.innerHTML = `
-        <img src="${item.img}" alt="${item.name}">
-        <h2>${item.name}</h2>
-        
-        <button value="${item.name}">Choose</button>
-    `;
-    let btn=card.querySelector('button');
-    btn.addEventListener('click',(e)=>{
-        const value=e.target.value;
-        if (value==='BTech'){
-            individualSectionBtech.style.display='block';
-            home.style.display='none';
-        }
-        else if (value==='BAA'){
-            individualSectionBaa.style.display='block';
-            home.style.display='none';
-        }
-        else if (value==='BA'){
-            individualSectionBa.style.display='block';
-            home.style.display='none';
-        }
-        else if (value==='LLB'){
-            individualSectionLlb.style.display='block';
-            home.style.display='none';
-        }
-        else if (value==='BSc'){
-            individualSectionBsc.style.display='block';
-            home.style.display='none';
-        }
-        else if (value==='MBBS'){
-            individualSectionMbbs.style.display='block';
-            home.style.display='none';
-        }
-    });
-
-
-    home.appendChild(card);
-    cards.push({ element: card, name: item.name });
-    
-});
-
-const Btech=document.getElementById('btech');
+// Data for BTECH
 const BTech=[
     {img:"imgaes/eee.jpg",name:'EEE'},
     {img:"imgaes/ece.jpg",name:'ECE'},
@@ -73,36 +23,21 @@ const BTech=[
     {img:"imgaes/aeronatical.jpg",name:'AERONATICAL'}
 ];
 
-const Ba=document.getElementById('ba');
-const BA=[
-    {img:"imgaes/english.jpg",name:'ENGLISH'},
-    {img:"imgaes/psycho.png",name:'PSYCHOLOGY'},
-    {img:"imgaes/ploiticalScience.jpg",name:'POLITICAL_SCIENCE'},
-    {img:"imgaes/journalism.webp",name:'JOURNALISM'}
-];
-
-const Baa=document.getElementById('baa');
-const BAA=[
-    {img:"imgaes/JusticeStudie.jpg",name:'JUSTICE_STUDIES'},
-    {img:"imgaes/design.webp",name:'DESIGN'},
-    {img:"imgaes/Media.jpg",name:'MEDIA_COMMNICATION'}
-];
-
-const Llb=document.getElementById('llb');
+// Data for LLB
 const LLB=[
     {img:"imgaes/crimnal.jpg",name:'CRIMINAL_LAW'},
     {img:"imgaes/civilLaw.webp",name:'CIVIL_LAW'},
     {img:"imgaes/cyber.avif",name:'CYBER_LAW'}
 ];
 
-const Bsc=document.getElementById('bsc');
+// Data for BSC
 const BSC=[
     {img:"imgaes/cs.jpg",name:'COMPUTER_SCIENCE'},
     {img:"imgaes/it.png",name:'INFORMATION_TECHNOLOGY'},
     {img:"imgaes/ds.jpg",name:'DATA_SCIENCE'},
 ];
 
-const Mbbs=document.getElementById('mbbs');
+// Data for MBBS
 const MBBS=[
     {img:"imgaes/radiology.png",name:'RADIOLOGY'},
     {img:"imgaes/Gmedecien.jpg",name:'GENERAL_MEDICINE'},
@@ -110,116 +45,50 @@ const MBBS=[
 ];
 
 
-
-function creatingCards(data,id){
-       data.forEach(Item=>{
-        let card=document.createElement('div');
-        card.classList.add('Card');
-        card.innerHTML = `
-            <img src="${Item.img}" alt="${Item.name}">
-            <h2>${Item.name}</h2>
-            <button value="${Item.name}">Take Test</button>
-            `;
-        let btn=card.querySelector('button');
-        card.addEventListener('click',(e)=>{
-            const value=e.target.value;
-            const SubjectNames=['EEE','MECH','CIVIL','CSE','ECE','AERONATICAL','ENGLISH','PSYCHOLOGY','POLITICAL_SCIENCE','JOURNALISM','COMPUTER_SCIENCE','INFORMATION_TECHNOLOGY',]
-        //    BTECH-----
-            if (value==='EEE'){
-                createQuizz(EEE)   
-            }
-            else if (value==='MECH'){
-                createQuizz(MECH)
-            } 
-            else if (value==='CIVIL'){
-                createQuizz(CIVIL)
-            } 
-            else if (value==='ECE'){
-                createQuizz(ECE)
-            } 
-            else if (value==='CSE'){
-                createQuizz(CSE)
-            } 
-            else if (value==='AERONATICAL'){
-                createQuizz(AERONATICAL)
-            } 
-
-        // BA----------
-            else if (value==='ENGLISH'){
-                createQuizz(ENGLISH)
-            } 
-            else if (value==='PSYCHOLOGY'){
-                createQuizz(PSYCHOLOGY)
-            } 
-            else if (value==='POLITICAL_SCIENCE'){
-                createQuizz(POLITICAL_SCIENCE)
-            } 
-            else if (value==='JOURNALISM'){
-                createQuizz(JOURNALISM)
-            } 
-        
-        //  BSc-------
-            else if (value==='COMPUTER_SCIENCE'){
-                createQuizz(COMPUTER_SCIENCE)
-            } 
-            else if (value==='INFORMATION_TECHNOLOGY'){
-                createQuizz(INFORMATION_TECHNOLOGY)
-            } 
-            else if (value==='DATA_SCIENCE'){
-                createQuizz(DATA_SCIENCE)
-            } 
-
-        // BAA--------
-            else if (value==='JUSTICE_STUDIES'){
-                createQuizz(JUSTICE_STUDIES)
-            } 
-            else if (value==='DESIGN'){
-                createQuizz(DESIGN)
-            }
-            else if (value==='MMEDIA_COMMNICATION'){
-                createQuizz(MEDIA_COMMNICATION)
-            } 
-            
-            
-        // LLB---------
-            else if (value==='CRIMINAL_LAW'){
-                createQuizz(CRIMINAL_LAW)
-            } 
-            else if (value==='CIVIL_LAW'){
-                createQuizz(CIVIL_LAW)
-            }
-            else if (value==='CYBER_LAW'){
-                createQuizz(CYBER_LAW)
-            } 
-
-        // MBBS---------
-            else if (value==='RADIOLOGY'){
-                createQuizz(RADIOLOGY)
-            } 
-            else if (value==='GENERAL_MEDICINE'){
-                createQuizz(GENERAL_MEDICINE)
-            }
-            else if (value==='PSYCHIATRY'){
-                createQuizz(PSYCHIATRY)
-            }
-        });
-
-        
-        id.appendChild(card);
-    }); 
-
-};
-
-const MainCradIds=[Btech,Ba,Baa,Bsc,Llb,Mbbs];
-const childCardsData=[BTech,BA,BAA,BSC,LLB,MBBS];
-
-for (let i=0;i<MainCradIds.length;i++){
-    creatingCards(childCardsData[i],MainCradIds[i]);
-};
+// All degress courses-- deatils in array WITH object formate
+const degreeCourse=[
+    {img:"imgaes/ba.png",name:'BA', var_data:BA},
+    {img:'imgaes/bsc.png',name:'BSc', var_data:BSC},
+    {img:'imgaes/b.tech.jpg',name:'BTech', var_data:BTech},
+    {img:'imgaes/baa.png',name:'BAA', var_data:BAA},
+    {img:'imgaes/llb.png',name:'LLB', var_data:LLB},
+    {img:'imgaes/mbbs.png',name:'MBBS', var_data:MBBS},
+];
 
 
-// All the quizz Data[questions,options,correctanswer] in formate of objects in list
+const home=document.getElementById('home');
+const section_2=document.getElementById('section-2');
+degreeCourse.forEach(item=>{
+  let card = document.createElement('div');
+    card.classList.add('homeCard');
+    card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <h2>${item.name}</h2>
+        <button value="${item.name}">Choose</button>
+    `;
+    home.appendChild(card);
+    
+    let chooseBtn=card.querySelector('button');
+    chooseBtn.addEventListener('click',(e)=>{
+      home.style.display='none'; //To hide homepage dregee course when click the choose button.
+      section_2.style.display='block';
+      let value=e.target.value;// this value is for to know which card is click using by its name.
+      if (item.name === value){
+        creatingEachCourseCard(item.var_data)
+        // the aboce creratingEachCoursecard is calling fucntion to create cards
+      }
+      
+    });
+    
+});
 
+
+
+
+
+// Quiz data in list iwht object formate which conatins questionjs,option etc....
+
+//eee quiz data
 const EEE = [
   {
     question: "1. What does EEE stand for?",
@@ -273,6 +142,7 @@ const EEE = [
   }
 ];
 
+//mech quiz data
 const MECH = [
   {
     question: "1. What does ME stand for?",
@@ -1386,21 +1256,69 @@ const PSYCHIATRY = [
   }
 ];
 
-const MainSection=document.getElementById('MainSection');
-const QuizSection=document.getElementById('QuizSection');
-const testmainCard=document.getElementById('maincard');
+// this quizlist contains all the course details with variables names
+const quizList=[
+  {name:'EEE',quiz_data:EEE},
+  {name:'ECE',quiz_data:ECE},
+  {name:'MECH',quiz_data:MECH},
+  {name:'CIVIL',quiz_data:CIVIL},
+  {name:'CSE',quiz_data:CSE},
+  {name:'AERONATICAL',quiz_data:AERONATICAL},
+  {name:'ENGLISH',quiz_data:ENGLISH},
+  {name:'PSYCHOLOGY',quiz_data:PSYCHOLOGY},
+  {name:'POLITICAL_SCIENCE',quiz_data:POLITICAL_SCIENCE},
+  {name:'JOURNALISM',quiz_data:JOURNALISM},
+  {name:'COMPUTER_SCIENCE',quiz_data:COMPUTER_SCIENCE},
+  {name:'INFORMATION_TECHNOLOGY',quiz_data:INFORMATION_TECHNOLOGY},
+  {name:'DATA_SCIENCE',quiz_data:DATA_SCIENCE},
+  {name:'JUSTICE_STUDIES',quiz_data:JUSTICE_STUDIES},
+  {name:'DESIGN',quiz_data:DESIGN},
+  {name:'MEDIA_COMMNICATION',quiz_data:MEDIA_COMMNICATION},
+  {name:'CRIMINAL_LAW',quiz_data:CRIMINAL_LAW},
+  {name:'CIVIL_LAW',quiz_data:CIVIL_LAW},
+  {name:'CYBER_LAW',quiz_data:CYBER_LAW},
+  {name:'RADIOLOGY',quiz_data:RADIOLOGY},
+  {name:'GENERAL_MEDICINE',quiz_data:GENERAL_MEDICINE},
+  {name:'PSYCHIATRY',quiz_data:PSYCHIATRY},
+]
 
-//Logi for creating QuizzSection withquestions, option, submit button
+// TO create dynamic sub courses in a dgreeCourse [like in btech, we have sub course --> such as eee, ece, mech, etc... like that..]
 
-function createQuizz(data) {
-  QuizSection.style.display = 'block';
-  MainSection.style.display = 'none';
-  // testmainCard.innerHTML = ''; // clear previous quiz cards
-  let UserName=prompt('Enter Your Name: ');
-  
-  
-  let userAnswers = [];
-  data.forEach((item, index) => {
+function creatingEachCourseCard(item){
+  const individualCourses=document.querySelector('.individualCourses');
+  for (let i=0;i<item.length;i++){
+    let deatils=item[i];
+    let coursecard=document.createElement('div');
+    coursecard.classList.add('Card');
+    coursecard.innerHTML = `
+        <img src="${deatils.img}" alt="${deatils.name}"class="cardImg">
+        <h2>${deatils.name}</h2>
+        <button value="${deatils.name}">Take Test</button>
+        `;
+    individualCourses.appendChild(coursecard);
+
+    let takeTestBtn=coursecard.querySelector('button');
+    takeTestBtn.addEventListener('click',(e)=>{
+      let value=e.target.value
+      quizList.forEach(data=>{
+        if (data.name === value){
+          creatingQuizQuestion(data.quiz_data);
+        }
+      })
+    })
+  }
+
+}
+
+const section_3=document.getElementById('section-3');
+let userAnswers = [];
+function creatingQuizQuestion(items){
+  let UserName=prompt("Enter Your Name:");
+  //here section-2 is hide and quizz questions will displayed
+  section_2.style.display='none';
+  section_3.style.display='block';
+  const questionsCard=document.getElementById('questionsCard');
+  items.forEach((item, index) => {
     let QuizzCard = document.createElement('div');
     QuizzCard.classList.add('quizcard');
     // unique name for each question
@@ -1422,60 +1340,52 @@ function createQuizz(data) {
       </ul>
       <button class="saveBtn">Save</button>
     `;
+    questionsCard.appendChild(QuizzCard);
 
-    testmainCard.appendChild(QuizzCard);
-
-    
-  
-    // handle save button
+    // Add event listener to the save button
     const saveBtn = QuizzCard.querySelector('.saveBtn');
-    saveBtn.addEventListener('click', () => {
-      const selected = QuizzCard.querySelector(`input[name="${inputName}"]:checked`);
-      
-      if (selected){
-        if (! userAnswers.includes(selected.value)){
-          userAnswers.push(selected.value);
-          saveBtn.style.opacity='0.1';
-          alert(`Selected Option: ${selected.value}`);
-        }
-      } else {     
+    saveBtn.addEventListener('click',(e)=>{
+      const selectedOption = QuizzCard.querySelector(`input[name="${inputName}"]:checked`);
+      if (selectedOption){
+        if (! userAnswers.includes(selectedOption.value)){
+          userAnswers.push(selectedOption.value);
+          saveBtn.style.opacity='0.3';
+          alert(`Selected Option: ${selectedOption.value}`);
+          
+        } 
+      } 
+      else {     
         alert("Please select an answer first!");
       }
+
+      let score = 0;
+      if (userAnswers.length > 0){
+        items.forEach((q, i) => {
+          if (userAnswers[i] === q.correctAnswer) score++;
+        });
+      }
+      else{
+        alert(`Please write the quizz First..!`);
+      };
+
+      document.getElementById('submitBtn').addEventListener('click', ()=>{
+          finalResult({UserName,score, total: items.length});
+        });
     });
-  });
 
-
-  // Optional: Add a Submit button to calculate score
-  document.getElementById('submitBtn').addEventListener('click', () => {
-    
-    let score = 0;
-    if (userAnswers.length > 0){
-      QuizSection.style.display='none';
-      data.forEach((q, i) => {
-        if (userAnswers[i] === q.correctAnswer) score++;
-      });
-
-      const thanksCard=document.getElementById('thanksCard');
-      const cardDiv=document.createElement('div');
-      cardDiv.classList.add('submitCard');
-      cardDiv.innerHTML=`
-          <h1>Thanks For Partcipating</h1>
-          <h3>Your Name: ${UserName}</h3>
-          <h3>Yuor Score: ${score}/${data.length}</h3>
-          <a href="">Back To Main Page</a>`;
-      thanksCard.appendChild(cardDiv);
-      document.getElementById('thanks').style.display='block';
-    }
-    else{
-      alert(`Please write the quizz First..!`);
-    }
   });
 }
 
+const section_4=document.getElementById('section-4');
+function finalResult({UserName,score,total}){
+    section_3.style.display='none';
+    section_4.style.display='block';
+    const resultCard=document.getElementById('resultCard');
+    resultCard.innerHTML=`
+      <h2>Quiz Completed!</h2>
+      <p>Congratulations, ${UserName}!</p>
+      <p>Your Score: ${score} out of ${total}</p>
+      <a href="index.html">Back To HomePage</a>
+    `;
+}
 
-
-// logic for back to Mainsection[course section] from qizz
-// document.getElementById('BackToMainsection').addEventListener('click',()=>{
-//   MainSection.style.display='grid';
-//   QuizSection.style.display='none';
-// });
