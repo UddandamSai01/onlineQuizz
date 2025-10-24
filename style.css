@@ -137,7 +137,7 @@ h2{
     font-size: 50px;
     margin:20px;
     text-decoration: none;
-    filter: brightness(200%);
+    filter: drop-shadow(0 0 10px white);
 }
 
 /* QuizSection wiht questions, options, save & submit button */
@@ -196,12 +196,24 @@ h2{
 #section-4{
     display: none;
 }
-
+/* final result card */
 #resultCard{
     display: grid;
     place-content: center;
     text-align: center;
     line-height: 30px;
-    height: 500px;
+    height: 500px;   
+}
+
+@media (max-width:720px) {
+    header h1{
+        font-size: 20px;
+    }
+    .homePage,.individualCourses{
+        flex-direction: row;
+    }
+    footer{
+        font-size: 12px;
+    }
     
 }

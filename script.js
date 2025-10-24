@@ -64,7 +64,7 @@ degreeCourse.forEach(item=>{
     card.innerHTML = `
         <img src="${item.img}" alt="${item.name}">
         <h2>${item.name}</h2>
-        <button value="${item.name}">Choose</button>
+        <a href="#section-2"><button value="${item.name}">Choose</button></a>
     `;
     home.appendChild(card);
     
