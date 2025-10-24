@@ -220,12 +220,28 @@ h2{
 
 @media (max-width:480px) {
     header h1{
-        font-size: 20px;
+        font-size: 19px;
+    }
+    header img{
+        height: 40px;
+        width: 40px;
+    }
+    header a img{
+        height: 50px;
+        width: 80px;
     }
     .homePage,.individualCourses{
-        flex-direction: row;
+        display: grid;
+        grid-template-columns:repeat(2,1fr) ;
+        gap: 10px;
+        width: 90%;
+        margin: auto;    
     }
     .quizcard{
         width: 90%;
+    }
+    footer{
+        font-size: 10px;
+        padding:20px  5px;
     }
 }
