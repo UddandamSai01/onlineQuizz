@@ -249,11 +249,7 @@ h2{
     .individualCourses{
         padding: 0px;
     }
-    .homeCard{
-        width: 85%;
-        height: 80%;
-    }
-    .Card{
+    .homeCard,.Card{
         width:165px;
         height: 90%;
       
