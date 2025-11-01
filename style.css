@@ -246,6 +246,9 @@ h2{
         gap: 5px;
         justify-items: center;
     }
+    .individualCourses{
+        padding: 5px;
+    }
     .homeCard{
         width: 85%;
         height: 80%;
