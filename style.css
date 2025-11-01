@@ -243,21 +243,22 @@ h2{
     .homePage,.individualCourses{
         display: grid;
         grid-template-columns:repeat(2,1fr) ;
-        gap: 5px;
+        gap: 10px;
         justify-items: center;
     }
+    .homePage{
+        padding: 5px;
+    }
     .individualCourses{
-        padding: 0px;
+        padding: 5px;
     }
     .homeCard{
-        width: 165px;
-        padding:0px;
+        width: 160px;
+        height: 75%;
     }
     .Card{
-        width: 165px;
-    }
-    .homeCard,.Card{
-        height: 90%;
+        width: 160px;
+        height: 85%;
     }
     .Card h2{
        font-size: 10px;
