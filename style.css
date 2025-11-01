@@ -249,10 +249,14 @@ h2{
     .individualCourses{
         padding: 0px;
     }
+    .homeCard{
+        width: 180px;
+    }
+    .Card{
+        width: 165px;
+    }
     .homeCard,.Card{
-        width:165px;
         height: 90%;
-      
     }
     .Card h2{
        font-size: 10px;
