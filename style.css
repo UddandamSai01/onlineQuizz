@@ -208,7 +208,7 @@ h2{
     place-content: center;
     text-align: center;
     line-height: 50px;
-    height: 700px;
+    height: 800px;
     font-size: 30px;   
 }
 
@@ -243,12 +243,21 @@ h2{
     .homePage,.individualCourses{
         display: grid;
         grid-template-columns:repeat(2,1fr) ;
-        gap: 10px;
+        gap: 5px;
         justify-items: center;
     }
-    .homeCard,.Card{
+    .homeCard{
         width: 85%;
-        height: 85%;
+        height: 80%;
+    }
+    .Card{
+        width:165px;
+        height: 90%;
+      
+    }
+    .Card h2{
+       font-size: 10px;
+      
     }
     .quizcard{
         width: 95%;

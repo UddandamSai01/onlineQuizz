@@ -1314,66 +1314,74 @@ const section_3=document.getElementById('section-3');
 let userAnswers = [];
 function creatingQuizQuestion(items){
   let UserName=prompt("Enter Your Name:");
-  //here section-2 is hide and quizz questions will displayed
-  section_2.style.display='none';
-  section_3.style.display='block';
-  const questionsCard=document.getElementById('questionsCard');
-  items.forEach((item, index) => {
-    let QuizzCard = document.createElement('div');
-    QuizzCard.classList.add('quizcard');
-    // unique name for each question
-    const inputName = `q${index}`;
+  console.log(UserName)
 
-    // create question HTML
-    QuizzCard.innerHTML = `
-      <h3>${item.question}</h3>
-      <ul>
-        ${item.options
-          .map(
-            (opt, i) => `
-            <li>
-              <input type="radio" name="${inputName}" id="${inputName}_${i}" value="${opt}">
-              <label for="${inputName}_${i}">${opt}</label>
-            </li>`
-          )
-          .join('')}
-      </ul>
-      <button class="saveBtn">Save</button>
-    `;
-    questionsCard.appendChild(QuizzCard);
+  if (UserName === null || UserName === ''){
+    alert(`Please entery Your name`);
+  }
+  else{
+    //here section-2 is hide and quizz questions will displayed
+    section_2.style.display='none';
+    section_3.style.display='block';
+    const questionsCard=document.getElementById('questionsCard');
+    items.forEach((item, index) => {
+      let QuizzCard = document.createElement('div');
+      QuizzCard.classList.add('quizcard');
+      // unique name for each question
+      const inputName = `q${index}`;
 
-    // Add event listener to the save button
-    const saveBtn = QuizzCard.querySelector('.saveBtn');
-    saveBtn.addEventListener('click',(e)=>{
-      const selectedOption = QuizzCard.querySelector(`input[name="${inputName}"]:checked`);
-      if (selectedOption){
-        if (! userAnswers.includes(selectedOption.value)){
-          userAnswers.push(selectedOption.value);
-          saveBtn.style.opacity='0.3';
-          alert(`Selected Option: ${selectedOption.value}`);
-          
+      // create question HTML
+      QuizzCard.innerHTML = `
+        <h3>${item.question}</h3>
+        <ul>
+          ${item.options
+            .map(
+              (opt, i) => `
+              <li>
+                <input type="radio" name="${inputName}" id="${inputName}_${i}" value="${opt}">
+                <label for="${inputName}_${i}">${opt}</label>
+              </li>`
+            )
+            .join('')}
+        </ul>
+        <button class="saveBtn">Save</button>
+      `;
+      questionsCard.appendChild(QuizzCard);
+
+      // Add event listener to the save button
+      const saveBtn = QuizzCard.querySelector('.saveBtn');
+      saveBtn.addEventListener('click',(e)=>{
+        const selectedOption = QuizzCard.querySelector(`input[name="${inputName}"]:checked`);
+        if (selectedOption){
+          if (! userAnswers.includes(selectedOption.value)){
+            userAnswers.push(selectedOption.value);
+            saveBtn.style.opacity='0.3';
+            alert(`Selected Option: ${selectedOption.value}`);
+            
+          } 
         } 
-      } 
-      else {     
-        alert("Please select an answer first!");
-      }
+        else {     
+          alert("Please select an answer first!");
+        }
 
-      let score = 0;
-      if (userAnswers.length > 0){
-        items.forEach((q, i) => {
-          if (userAnswers[i] === q.correctAnswer) score++;
-        });
-      }
-      else{
-        alert(`Please write the quizz First..!`);
-      };
+        let score = 0;
+        if (userAnswers.length > 0){
+          items.forEach((q, i) => {
+            if (userAnswers[i] === q.correctAnswer) score++;
+          });
+        }
+        else{
+          alert(`Please write the quizz First..!`);
+        };
 
-      document.getElementById('submitBtn').addEventListener('click', ()=>{
-          finalResult({UserName,score, total: items.length});
-        });
+        document.getElementById('submitBtn').addEventListener('click', ()=>{
+            finalResult({UserName,score, total: items.length});
+          });
+      });
+
+      
     });
-
-  });
+  }
 }
 
 const section_4=document.getElementById('section-4');
