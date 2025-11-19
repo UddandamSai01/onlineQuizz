@@ -58,13 +58,14 @@ const degreeCourse=[
 
 const home=document.getElementById('home');
 const section_2=document.getElementById('section-2');
+const header=document.getElementById('header');
 degreeCourse.forEach(item=>{
   let card = document.createElement('div');
     card.classList.add('homeCard');
     card.innerHTML = `
         <img src="${item.img}" alt="${item.name}">
         <h2>${item.name}</h2>
-        <a href="#section-2"><button value="${item.name}">Choose</button></a>
+        <a href="#header"><button value="${item.name}">Choose</button></a>
     `;
     home.appendChild(card);
     
@@ -1391,9 +1392,8 @@ function finalResult({UserName,score,total}){
     const resultCard=document.getElementById('resultCard');
     resultCard.innerHTML=`
       <h2>Quiz Completed!</h2>
-      <p>Congratulations, ${UserName}!</p>
-      <p>Your Score: ${score} out of ${total}</p>
+      <p>Congratulations,<br> <span>${UserName}</span> ...!</p>
+      <p>Your Score: <span class='score'>${score} / ${total}</span> </p>
       <a href="index.html">Back To HomePage</a>
     `;
 }
-
