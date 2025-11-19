@@ -65,6 +65,10 @@ header a {
     text-align: center;
     margin-bottom: 30px;
 }
+.Card:hover,.homeCard:hover{
+    transform: translateY(-10px);
+    transition: .3s linear;
+}
 .Card h2{
     font-size: 18px;
 }
