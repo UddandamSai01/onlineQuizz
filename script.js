@@ -140,8 +140,12 @@ const EEE = [
     question: "10. What is the SI unit of electric charge?",
     options: ["Coulomb", "Volt", "Ampere", "Watt"],
     correctAnswer: "Coulomb"
-  }
-];
+  },
+  {
+    question: "11. EEE stands for",
+    options: ["E", "Volt", "Ampere", "Watt"],
+    correctAnswer: "Coulomb"
+  }];
 
 //mech quiz data
 const MECH = [
